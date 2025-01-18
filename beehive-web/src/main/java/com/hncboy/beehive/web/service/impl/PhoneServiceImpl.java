@@ -95,6 +95,7 @@ public class PhoneServiceImpl implements PhoneService {
              * CAM 查询：https://console.cloud.tencent.com/cam/capi
              */
 
+            com.tencentcloudapi.common.Credential cred = new Credential("x", "x");
 
             // 实例化一个 http 选项，可选，无特殊需求时可以跳过
             HttpProfile httpProfile = new HttpProfile();
