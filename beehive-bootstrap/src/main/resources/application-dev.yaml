@@ -1,0 +1,120 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${MYSQL_USER_NAME:qsw}
+    password: ${MYSQL_PASSWORD:qqq@qqq}
+    url: ${JDBC_URL:jdbc:mysql://17.107.34.2:2203/xxxxxx?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true}
+    jpa:  # 11.22.33.1
+      show-sql: true
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1200000
+      # 117.72.34.2 127.0.0.1
+  data:
+    redis:
+      host: ${REDIS_HOST:1xx.xx.xx.xx}
+      password: ${REDIS_PASSWORD:xxxxxx}
+      port: ${REDIS_PORT:xxxxxx}
+      connect-timeout: 2000
+  servlet:
+    multipart:
+      # 最大文件大小
+      max-file-size: ${SERVLET_MULTIPART_MAX_FILE_SIZE:50MB}
+      # 最大请求大小
+      max-request-size: ${SERVLET_MULTIPART_MAX_REQUEST_SIZE:55MB}
+  mvc:
+    # 响应路径，nginx 可以配该路径
+    static-path-pattern: /${file-path.visit-prefix}/**
+    #
+  web:
+    resources:
+      # 资源文件存储路径
+      static-locations: file:${file-path.save-prefix}
+      #
+
+mybatis-plus:
+  #configuration:
+    # 控制台打印 SQL
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    # 关闭 banner
+    banner: false
+
+sa-token:
+  # 用于加密 JWT
+  jwt-secret-key: ${JWT_SECRET:ai-xxxx'xxxxxx}
+  # JWT 有效期
+  timeout: ${JWT_TOKEN_TIMEOUT:2592000}
+  token-name: satoken
+  # 关闭 banner
+  is-print: false
+
+# lock4j 分布式锁
+lock4j:
+  # 前缀
+  lock-key-prefix: bh
+
+# forest 配置
+forest:
+  # 数据读取超时时间
+  read-timeout: 30000
+  # 连接超时时间
+  connect-timeout: 30000
+
+# 日志配置
+logging:
+  level:
+    root: ${LOGGING_LEVEL_ROOT:info}
+    #com.hncboy: debug
+
+# 代理配置，一般 IDEA 运行使用
+proxy:
+  enabled: false
+  http-host: 127.0.0.1
+  http-port: 6666
+
+# 文件路径
+file-path:
+  # 保存前缀# /xx/img/  D:\xx\hello\
+  save-prefix: ${FILE_PATH_SAVE_PREFIX:D:\chatgpt\hello\}
+  # 访问前缀
+  visit-prefix: resources
+  #ali支付密钥根目录
+  ali_zs_path: D:\xxx\xxx\zfb\xxx\
+  # D:\xx\xx\xx\zs\ /xx/zs/
+
+wx-pay:
+    #商户API私钥路径
+  privateKeyPath: D://xx//wx//xx//xx.pem
+    #商户证书序列号
+  merchantSerialNumber: xxx
+  apiV3Key: xxxxxx
+  #公众平台id
+  appid:  xxxxx
+        #商户id
+  mchid:  xxxxxx
+        #回调地址
+  naviteNotifyUrl:  https://xxxx.xxx.co:xxx/api/pay/wx_native
+
+zfb-pay:
+  #网关url
+  serverUrl: https://xx.xxxx.com/gateway.do
+  #应用appid
+  appid: xxxxx
+  #私钥
+  privateKey: xxx/VaXvKjPDJKqWEvb/xxx/xxx+xxxx+o6uEowpY3ewwMIue+xx+xx+xx/xxx/7W50iI+xx+assN/xxxx+xx+kOPC4k9HO02/xx/xx+TRbDH1cqQB9//KMhGS+xx+xx/xx/
+  #应用公钥证书路径
+  appCertPath:  ${file-path.ali_zs_path}xxx.crt
+  #D:\xxx\zhifu\zfb\zs\xxx.crt
+  #支付宝公钥证书路径
+  alipayPublicCertPath: ${file-path.ali_zs_path}xxx.crt
+  #D:\16chatgpt\zhifu\zfb\zs\xxx.crt
+  #支付宝根证书路径
+  alipayRootCertPath: ${file-path.ali_zs_path}xxx.crt
+  #D:\16chatgpt\zhifu\zfb\zs\xxx.crt
+  notifyUrl:  https://xxx.xxx.top/api/xxx/zfb_back
+  returnUrl:  https://xxx.xxx.top/#/person
+
