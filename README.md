@@ -1,6 +1,9 @@
 # WM-AI
 WM-AI支持的功能有 ChatGPT、OpenAi Image、Midjourney、思维导图等等
 
+# 推荐一站式AI中转API服务，支持OpenAI、Midjourney、Stable Diffusion、Claude、Gemini等多种主流AI接口，助力企业和开发者轻松集成先进AI技术
+直达连接：https://api.openxs.top
+
 > [!NOTE]  
 本项目为开源项目，在[chatgpt-jiezi](https://github.com/hncboy/chatgpt-jiezi)的基础上进行二次开发
 
